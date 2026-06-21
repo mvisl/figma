@@ -223,9 +223,10 @@
 
       <h3>Source Priority</h3>
       <ol>
-        <li>Use the project's primary design system first.</li>
-        <li>If the component or pattern is not in the design system, use the existing live product UI.</li>
-        <li>If the live product does not cover the case, use existing Figma pages and previous project screens.</li>
+        <li>Use the live product as the main source of truth for real behavior, patterns, and states.</li>
+        <li>Use the project's primary design system for components, colors, text styles, and reusable building blocks.</li>
+        <li>If the design system component is missing or does not cover a live-product state, adapt it locally and record the decision.</li>
+        <li>If the live product and design system do not cover the case, use existing Figma pages and previous project screens.</li>
         <li>Use secondary design systems only for the explicitly allowed properties in the project section.</li>
         <li>Create a new element only when no suitable existing pattern exists, and document the reason.</li>
       </ol>
@@ -276,9 +277,10 @@
 
         <h3>Design System Priority</h3>
         <ol>
-          <li><strong>Oboard Design System 25/26</strong>: primary source for components, colors, text styles, and product-specific UI patterns.</li>
-          <li><strong>Live Oboard product</strong>: use existing pages in Chrome when a matching pattern already exists in production.</li>
-          <li><strong>Existing Figma pages</strong>: use elements from current or previous Oboard screens when they are not in the formal design system.</li>
+          <li><strong>Live Oboard product</strong>: primary source of truth for current behavior, product patterns, component states, and real UI usage.</li>
+          <li><strong>Oboard Design System 25/26</strong>: primary source for components, colors, text styles, and reusable Oboard UI elements.</li>
+          <li><strong>Local adaptation</strong>: if the needed component or state is missing in the design system, or a design-system state differs from the live product, adjust the design locally and record the decision.</li>
+          <li><strong>Existing Figma pages</strong>: use elements from current or previous Oboard screens when they are not in the formal design system and cannot be derived from the live product.</li>
           <li><strong>Simple Design System</strong>: allowed only for spacing, dimensions, radius, and distance references.</li>
           <li><strong>New local design</strong>: only when none of the above contains the needed pattern.</li>
         </ol>
@@ -341,6 +343,7 @@
 
         <h3>Changelog</h3>
         <ul>
+          <li>2026-06-21: Updated source priority. Live Oboard product is the source of truth for behavior, patterns, and states; Oboard Design System remains the source for components and styles, with local adaptation allowed when states differ or are missing.</li>
           <li>2026-06-21: Created playbook. Added Oboard Figma links, design-system priority, and dashboard/collection decisions from Loom transcript and user notes.</li>
         </ul>
       </div>
