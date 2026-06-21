@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Playbook</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5b667a;
+      --line: #d9dee8;
+      --accent: #0b57d0;
+      --accent-soft: #e8f0fe;
+      --warn: #8a5a00;
+      --warn-bg: #fff6df;
+      --code: #eef1f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: var(--code);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 14px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin: 18px 0;
+      padding: 14px 16px;
+      background: var(--warn-bg);
+      border: 1px solid #efd38e;
+      border-radius: 8px;
+      color: var(--warn);
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px;
+      margin: 18px 0;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--line);
+      background: var(--accent-soft);
+    }
+
+    .details-body {
+      padding: 4px 20px 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 2px 4px 2px 0;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f0f3f8;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 14px 48px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section,
+      .details-body {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Design Playbook</h1>
+      <p class="meta">Last updated: 2026-06-21. This file is the shared source of truth for design and Figma work across local Codex workspaces and the GitHub mirror.</p>
+    </header>
+
+    <div class="notice">
+      Keep this page synchronized with the GitHub copy. Chats started from a local workspace should read the local file; work on another computer should pull or copy the latest GitHub version before starting.
+    </div>
+
+    <section class="section">
+      <h2>How To Use This File</h2>
+      <ul>
+        <li>Start with General Rules for any design, Figma, or UI task.</li>
+        <li>Then open the matching project section, such as Oboard or Libertex.</li>
+        <li>When a decision is made in chat, Figma comments, video feedback, or product review, add it to the relevant section and changelog.</li>
+        <li>If a project-specific rule conflicts with a general rule, follow the project-specific rule and record why.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>General Rules</h2>
+
+      <h3>Source Priority</h3>
+      <ol>
+        <li>Use the project's primary design system first.</li>
+        <li>If the component or pattern is not in the design system, use the existing live product UI.</li>
+        <li>If the live product does not cover the case, use existing Figma pages and previous project screens.</li>
+        <li>Use secondary design systems only for the explicitly allowed properties in the project section.</li>
+        <li>Create a new element only when no suitable existing pattern exists, and document the reason.</li>
+      </ol>
+
+      <h3>Figma Workflow</h3>
+      <ul>
+        <li>Work from the current iteration and the user's annotated frames, not from old exploration frames unless explicitly told.</li>
+        <li>Preserve comments and use them as requirements until the user marks them obsolete.</li>
+        <li>When video feedback exists, treat the transcript and screenshots as clarification for the Figma comments.</li>
+        <li>When a detail is ambiguous, request a screenshot or timestamp instead of guessing a visual state.</li>
+        <li>Reuse existing components, instances, variables, color styles, and text styles whenever available.</li>
+      </ul>
+
+      <h3>Style Rules</h3>
+      <ul>
+        <li>Colors and text styles must come from the project's primary design system unless a project section says otherwise.</li>
+        <li>Spacing, radius, and sizing may come from a secondary system only when the project section allows it.</li>
+        <li>Do not invent a new visual language when the product already has the same pattern elsewhere.</li>
+        <li>Before finalizing UI work, verify that text fits, controls match existing product behavior, and states are accounted for.</li>
+      </ul>
+
+      <h3>Decision Logging</h3>
+      <ul>
+        <li>Record decisions as short, dated entries in the relevant project's changelog.</li>
+        <li>Keep the latest rule in the main project section; changelog explains how it changed.</li>
+        <li>Move stale or overridden decisions out of active rules and into notes if they still matter historically.</li>
+      </ul>
+    </section>
+
+    <h2>Project Rules</h2>
+
+    <details open>
+      <summary>Oboard</summary>
+      <div class="details-body">
+        <p>
+          <span class="tag">Figma</span>
+          <span class="tag">Dashboards</span>
+          <span class="tag">Collections</span>
+        </p>
+
+        <h3>Key Links</h3>
+        <ul>
+          <li>Review version: <a href="https://www.figma.com/design/QifE8JQBo3F3pylu8cORZq/Oboard-Slava?node-id=746-36346&t=cnitnewZEyzkpI8N-11">Oboard Slava, review frame</a></li>
+          <li>Annotated walkthrough: <a href="https://www.figma.com/design/QifE8JQBo3F3pylu8cORZq/Oboard-Slava?node-id=828-15563&t=cnitnewZEyzkpI8N-11">Oboard Slava, video notes left to right</a></li>
+          <li>Dashboard list in product: <a href="https://app.oboard.io/#/workspaces/23574/dashboard/custom-dashboard/list?ownerIds=%5B0%5D&sortBy=%22A-Z%22&sortField=%22name%22">app.oboard.io dashboard list</a></li>
+          <li>Reference switcher pattern: <a href="https://app.oboard.io/#/workspaces/23574/objectives/alignment/progress?intervalIds=%5B146645%5D&assigneeIds=%5B0%5D&groupIds=%5B0%5D&gradeTypes=%5B0%5D&OKRTypeIds=%5B0%5D&dueDates=null&startDates=null&lastGradeUpdateDates=null&lastComment=%5B0,null%5D&lastCheckin=%5B0,null%5D&labelIds=%5B0%5D&stakeholderIds=%5B0%5D&sortOrder=%5B%5D&sortChildren=false&expandedItems=%5B%223324529-0%22,%223324542-1%22,%223324543-1%22,%223324564-2%22,%223324544-1%22,%223324528-0%22,%223324538-1%22,%223324556-2%22,%223324573-3%22,%223324534-1%22,%223324532-1%22,%223324536-1%22,%223324552-2%22,%223324530-0%22,%223324539-1%22,%223324558-2%22,%223324541-1%22,%223324561-2%22,%223324574-3%22%5D&filterCollapsedItems=%5B%5D&cff=%5B%5D">Objectives alignment progress</a></li>
+        </ul>
+
+        <h3>Design System Priority</h3>
+        <ol>
+          <li><strong>Oboard Design System 25/26</strong>: primary source for components, colors, text styles, and product-specific UI patterns.</li>
+          <li><strong>Live Oboard product</strong>: use existing pages in Chrome when a matching pattern already exists in production.</li>
+          <li><strong>Existing Figma pages</strong>: use elements from current or previous Oboard screens when they are not in the formal design system.</li>
+          <li><strong>Simple Design System</strong>: allowed only for spacing, dimensions, radius, and distance references.</li>
+          <li><strong>New local design</strong>: only when none of the above contains the needed pattern.</li>
+        </ol>
+
+        <h3>Dashboard / Collection Model</h3>
+        <ul>
+          <li>A collection is now a label/group/tag, not an ownership or permission container.</li>
+          <li>No user owns a collection.</li>
+          <li>Any user can add a collection label to any dashboard where they can perform the dashboard-level action.</li>
+          <li>A dashboard can belong to multiple collections at the same time.</li>
+          <li>Dashboard permissions remain on each dashboard.</li>
+          <li>A collection can be visible while some dashboards inside it remain private to the current user.</li>
+        </ul>
+
+        <h3>Dashboard / Collection Views</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>View</th>
+              <th>Expected Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dashboards</td>
+              <td>Shows the current dashboard list. Add collection membership controls, likely as a column or dropdown similar to the production label/collection selector.</td>
+            </tr>
+            <tr>
+              <td>Collections</td>
+              <td>Shows a list of collections. Each collection expands to show dashboards inside it.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Controls And Actions</h3>
+        <ul>
+          <li>Add a top switcher between Dashboards and Collections, based on the existing Oboard segmented switcher pattern from the Objectives alignment progress page.</li>
+          <li>Collection actions: Edit collection and Delete collection.</li>
+          <li>Collection share can exist as a direct collection-level action if confirmed, but collection permissions are not the source of dashboard access.</li>
+          <li>Do not show Owner or Public/Private fields for collections.</li>
+          <li>Dashboard actions remain the existing dashboard actions, with collection assignment added.</li>
+          <li>The collection assignment dropdown should support search and add/create behavior like the current production pattern.</li>
+          <li>Drag and drop is not needed because dashboard-to-collection membership is many-to-many.</li>
+        </ul>
+
+        <h3>Private Dashboards Inside Collections</h3>
+        <ul>
+          <li>If a collection contains a dashboard the current user cannot access, show a private dashboard placeholder.</li>
+          <li>The placeholder should explain that this is a private dashboard.</li>
+          <li>Include a Request access action.</li>
+          <li>Do not use the old collection-level permission banner for this case.</li>
+        </ul>
+
+        <h3>Current Open Questions</h3>
+        <ul>
+          <li>Confirm whether collection-level Share remains in the final UI and what exactly it shares.</li>
+          <li>Confirm final wording for the private dashboard placeholder and request-access button.</li>
+          <li>Confirm whether collection create/edit/delete permissions are open to all users or constrained by workspace role.</li>
+        </ul>
+
+        <h3>Changelog</h3>
+        <ul>
+          <li>2026-06-21: Created playbook. Added Oboard Figma links, design-system priority, and dashboard/collection decisions from Loom transcript and user notes.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Libertex</summary>
+      <div class="details-body">
+        <p>No project-specific rules yet. Before starting Libertex work, define the primary design system, source priority, live product references, and project-specific exceptions.</p>
+      </div>
+    </details>
+  </main>
+</body>
+</html>
