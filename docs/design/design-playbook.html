@@ -238,7 +238,7 @@
         <li>When video feedback exists, treat the transcript and screenshots as clarification for the Figma comments.</li>
         <li>When a detail is ambiguous, request a screenshot or timestamp instead of guessing a visual state.</li>
         <li>Reuse existing components, instances, variables, color styles, and text styles whenever available.</li>
-        <li>Do not open or edit source design-system files unless the user explicitly asks for it. Inspect library assets through the working file, existing instances, styles, variables, or product references.</li>
+        <li>Do not open or edit source design-system files proactively. This is allowed only when the user explicitly says to open or edit that source file in the current task. Inspect library assets through the working file, existing instances, styles, variables, or product references.</li>
       </ul>
 
       <h3>Style Rules</h3>
@@ -279,7 +279,7 @@
         <h3>Design System Priority</h3>
         <ol>
           <li><strong>Live Oboard product</strong>: primary source of truth for current behavior, product patterns, component states, and real UI usage.</li>
-          <li><strong>Oboard Design System 25/26</strong>: primary source for components, colors, text styles, and reusable Oboard UI elements. Do not open or edit the source design-system file unless explicitly requested; inspect it through attached libraries, instances, styles, and variables in the working file.</li>
+          <li><strong>Oboard Design System 25/26</strong>: primary source for components, colors, text styles, and reusable Oboard UI elements. Do not open or edit the source design-system file proactively; this is allowed only when the user explicitly says to open or edit that file in the current task. Inspect it through attached libraries, instances, styles, and variables in the working file.</li>
           <li><strong>Local adaptation</strong>: if the needed component or state is missing in the design system, or a design-system state differs from the live product, adjust the design locally and record the decision.</li>
           <li><strong>Existing Figma pages</strong>: use elements from current or previous Oboard screens when they are not in the formal design system and cannot be derived from the live product.</li>
           <li><strong>Simple Design System</strong>: allowed only for spacing, dimensions, radius, and distance references.</li>
@@ -344,7 +344,7 @@
 
         <h3>Changelog</h3>
         <ul>
-          <li>2026-06-21: Added a design-system access rule. Do not open or edit the Oboard Design System source file unless explicitly requested; inspect components and styles through the working file, attached libraries, instances, variables, and product references.</li>
+          <li>2026-06-21: Added a design-system access rule. Do not open or edit the Oboard Design System source file proactively; this is allowed only when the user explicitly says to open or edit that file in the current task. Inspect components and styles through the working file, attached libraries, instances, variables, and product references.</li>
           <li>2026-06-21: Updated source priority. Live Oboard product is the source of truth for behavior, patterns, and states; Oboard Design System remains the source for components and styles, with local adaptation allowed when states differ or are missing.</li>
           <li>2026-06-21: Created playbook. Added Oboard Figma links, design-system priority, and dashboard/collection decisions from Loom transcript and user notes.</li>
         </ul>
