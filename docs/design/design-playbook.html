@@ -320,30 +320,46 @@
         <ul>
           <li>Add a top switcher between Dashboards and Collections, based on the existing Oboard segmented switcher pattern from the Objectives alignment progress page.</li>
           <li>Collection actions: Edit collection and Delete collection.</li>
-          <li>Collection share can exist as a direct collection-level action if confirmed, but collection permissions are not the source of dashboard access.</li>
+          <li>Add a Share collection action. Collection sharing is about sharing the collection view/link, not granting dashboard-level access.</li>
           <li>Do not show Owner or Public/Private fields for collections.</li>
           <li>Dashboard actions remain the existing dashboard actions, with collection assignment added.</li>
           <li>The collection assignment dropdown should support search and add/create behavior like the current production pattern.</li>
           <li>Drag and drop is not needed because dashboard-to-collection membership is many-to-many.</li>
         </ul>
 
+        <h3>Figma Comment Requirements</h3>
+        <ul>
+          <li>Remove Owner from collection rows and collection views.</li>
+          <li>Remove Public/Private visibility from collection rows and collection views.</li>
+          <li>Add a button/action to Share collection.</li>
+          <li>Collection contextual menu should include Edit collection and Delete collection.</li>
+          <li>In collection preview/opened mode, use a combined Share / Copy link control where appropriate.</li>
+          <li>Do not add user-level sharing for collections. Only share the collection itself; dashboard access remains dashboard-level.</li>
+          <li>Add the Dashboards / Collections toggle on the Custom dashboard list.</li>
+          <li>Add a Collections column or assignment control to dashboard rows.</li>
+        </ul>
+
         <h3>Private Dashboards Inside Collections</h3>
         <ul>
           <li>If a collection contains a dashboard the current user cannot access, show a private dashboard placeholder.</li>
+          <li>Do not reveal hidden dashboard names to users without access; show a private/hidden dashboard state instead.</li>
           <li>The placeholder should explain that this is a private dashboard.</li>
-          <li>Include a Request access action.</li>
+          <li>For users without access, include a Request access action.</li>
+          <li>For owners/admins viewing access issues, provide a quick Grant access action.</li>
+          <li>When relevant, show a warning banner similar to: "Visibility: Public collection. 2 dashboards are hidden from some members".</li>
           <li>Do not use the old collection-level permission banner for this case.</li>
         </ul>
 
         <h3>Current Open Questions</h3>
         <ul>
-          <li>Confirm whether collection-level Share remains in the final UI and what exactly it shares.</li>
           <li>Confirm final wording for the private dashboard placeholder and request-access button.</li>
           <li>Confirm whether collection create/edit/delete permissions are open to all users or constrained by workspace role.</li>
+          <li>Confirm exact placement of the Share collection / Copy link combo in the final collection preview layout.</li>
         </ul>
 
         <h3>Changelog</h3>
         <ul>
+          <li>2026-06-21: Added Figma comment requirements. Collections do not need Owner or Public/Private fields; collections need Share collection plus Edit/Delete collection actions; collection share is not user-level dashboard access; hidden dashboards should use private/request/grant access states.</li>
           <li>2026-06-21: Added a design-system access rule. Do not open or edit the Oboard Design System source file proactively; this is allowed only when the user explicitly says to open or edit that file in the current task. Inspect components and styles through the working file, attached libraries, instances, variables, and product references.</li>
           <li>2026-06-21: Updated source priority. Live Oboard product is the source of truth for behavior, patterns, and states; Oboard Design System remains the source for components and styles, with local adaptation allowed when states differ or are missing.</li>
           <li>2026-06-21: Created playbook. Added Oboard Figma links, design-system priority, and dashboard/collection decisions from Loom transcript and user notes.</li>
