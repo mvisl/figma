@@ -1,7 +1,6 @@
 const phone = document.querySelector(".phone");
 const track = document.querySelector(".slider-track");
 const thumb = document.querySelector(".slider-thumb");
-const chevrons = [...document.querySelectorAll(".chevrons span")];
 const slideState = document.querySelector(".slide-state");
 const requestedState = document.querySelector(".requested-state");
 
@@ -17,11 +16,6 @@ function render(nextProgress) {
   phone.style.setProperty("--progress", progress.toFixed(3));
   phone.style.setProperty("--thumb-left", `${left}px`);
   thumb.style.transform = `translate3d(${left}px, 0, 0)`;
-
-  chevrons.forEach((chevron, index) => {
-    const wave = clamp(progress * 3 - index * 0.08);
-    chevron.style.setProperty("--lit", wave.toFixed(3));
-  });
 }
 
 function requestCompensation() {

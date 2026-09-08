@@ -246,34 +246,34 @@ button { font: inherit; }
   top: 0;
   right: 84px;
   bottom: 0;
-  left: calc(144px + var(--thumb-left));
+  left: 144px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: left 260ms cubic-bezier(.2,.8,.2,1);
 }
 
-.phone[data-dragging="true"] .chevrons { transition: none; }
-
 .chevrons .icon-chevron {
-  --lit: 0;
-  --base-opacity: .08;
   flex: 0 0 13px;
   width: 13px;
   height: 18px;
-  background-color: color-mix(in srgb, #ff7a45 calc(var(--lit) * 100%), #ffffff);
+  background-color: #ff7a45;
   -webkit-mask-image: url("./assets/chevron-right.svg");
   mask-image: url("./assets/chevron-right.svg");
-  opacity: calc(var(--base-opacity) + var(--lit) * .82);
-  filter: drop-shadow(0 0 calc(var(--lit) * 7px) rgba(255, 102, 51, var(--lit)));
+  opacity: .12;
+  animation: chevron-wave 1.45s ease-in-out infinite;
 }
 
-.chevrons .icon-chevron:nth-child(2) { --base-opacity: .14; }
-.chevrons .icon-chevron:nth-child(3) { --base-opacity: .22; }
-.chevrons .icon-chevron:nth-child(4) { --base-opacity: .32; }
-.chevrons .icon-chevron:nth-child(5) { --base-opacity: .44; }
-.chevrons .icon-chevron:nth-child(6) { --base-opacity: .58; }
+.chevrons .icon-chevron:nth-child(2) { animation-delay: .11s; }
+.chevrons .icon-chevron:nth-child(3) { animation-delay: .22s; }
+.chevrons .icon-chevron:nth-child(4) { animation-delay: .33s; }
+.chevrons .icon-chevron:nth-child(5) { animation-delay: .44s; }
+.chevrons .icon-chevron:nth-child(6) { animation-delay: .55s; }
+
+@keyframes chevron-wave {
+  0%, 52%, 100% { opacity: .12; filter: drop-shadow(0 0 0 rgba(255, 102, 51, 0)); }
+  22% { opacity: .92; filter: drop-shadow(0 0 6px rgba(255, 102, 51, .9)); }
+}
 
 .price { position: absolute; z-index: 2; top: 0; right: 15px; display: flex; align-items: center; height: 100%; white-space: nowrap; }
 .price b { color: #ffffff; font-size: 17px; font-weight: 400; line-height: 22px; }
@@ -294,5 +294,6 @@ button { font: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slider-thumb, .chevrons, .slide-state, .requested-state { transition-duration: 1ms; }
+  .slider-thumb, .slide-state, .requested-state { transition-duration: 1ms; }
+  .chevrons .icon-chevron { animation: none; opacity: .38; }
 }
