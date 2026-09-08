@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/roboto-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/roboto-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   font-family: "Roboto", Arial, sans-serif;
@@ -138,7 +154,8 @@ button { font: inherit; }
 .card h2 { margin-bottom: 12px; font-size: 19px; font-weight: 400; line-height: 24px; }
 .benefits, .steps { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .benefits li, .steps li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; align-items: start; color: #909294; font-size: 15px; line-height: 20px; }
-.benefits .material-symbols-outlined { color: #53a642; font-size: 20px; line-height: 20px; }
+.icon { display: inline-block; flex: 0 0 auto; background-color: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+.icon-check { width: 20px; height: 20px; color: #53a642; -webkit-mask-image: url("./assets/check-circle.svg"); mask-image: url("./assets/check-circle.svg"); }
 
 .step-number {
   display: grid;
@@ -239,29 +256,31 @@ button { font: inherit; }
 
 .phone[data-dragging="true"] .chevrons { transition: none; }
 
-.chevrons span {
+.chevrons .icon-chevron {
   --lit: 0;
   --base-opacity: .08;
   flex: 0 0 13px;
-  color: color-mix(in srgb, #ff7a45 calc(var(--lit) * 100%), #ffffff);
-  font-size: 18px;
-  line-height: 20px;
+  width: 13px;
+  height: 18px;
+  background-color: color-mix(in srgb, #ff7a45 calc(var(--lit) * 100%), #ffffff);
+  -webkit-mask-image: url("./assets/chevron-right.svg");
+  mask-image: url("./assets/chevron-right.svg");
   opacity: calc(var(--base-opacity) + var(--lit) * .82);
   filter: drop-shadow(0 0 calc(var(--lit) * 7px) rgba(255, 102, 51, var(--lit)));
 }
 
-.chevrons span:nth-child(2) { --base-opacity: .14; }
-.chevrons span:nth-child(3) { --base-opacity: .22; }
-.chevrons span:nth-child(4) { --base-opacity: .32; }
-.chevrons span:nth-child(5) { --base-opacity: .44; }
-.chevrons span:nth-child(6) { --base-opacity: .58; }
+.chevrons .icon-chevron:nth-child(2) { --base-opacity: .14; }
+.chevrons .icon-chevron:nth-child(3) { --base-opacity: .22; }
+.chevrons .icon-chevron:nth-child(4) { --base-opacity: .32; }
+.chevrons .icon-chevron:nth-child(5) { --base-opacity: .44; }
+.chevrons .icon-chevron:nth-child(6) { --base-opacity: .58; }
 
 .price { position: absolute; z-index: 2; top: 0; right: 15px; display: flex; align-items: center; height: 100%; white-space: nowrap; }
 .price b { color: #ffffff; font-size: 17px; font-weight: 400; line-height: 22px; }
 .price span { color: #606264; font-size: 14px; line-height: 18px; }
 
 .requested-copy { display: flex; align-items: center; gap: 5px; color: #ffa408; font-size: 14px; line-height: 18px; }
-.requested-copy .material-symbols-outlined { font-size: 17px; }
+.icon-clock { width: 17px; height: 17px; -webkit-mask-image: url("./assets/clock.svg"); mask-image: url("./assets/clock.svg"); }
 
 .phone[data-state="requested"] .slider-track { border-color: #2b2522; background: #2b2522; }
 .phone[data-state="requested"] .slide-state { opacity: 0; transform: translateY(-4px); pointer-events: none; }
