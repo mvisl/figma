@@ -1,0 +1,12 @@
+{
+  "id": "mobile-app-design",
+  "latestVersion": "1.1.0",
+  "updatedAt": "2026-10-20",
+  "freshnessCheckPolicy": "on_session_start_max_once_per_day",
+  "designUrl": "https://mvisl.github.io/figma/DESIGN.md",
+  "changelogUrl": "https://mvisl.github.io/figma/CHANGELOG.md",
+  "siteUrl": "https://mvisl.github.io/figma/",
+  "changelogPageUrl": "https://mvisl.github.io/figma/changelog.html",
+  "figmaMcpRecommended": true,
+  "sourceAccess": "authorized-registry-supplied-separately"
+}
